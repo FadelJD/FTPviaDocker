@@ -1,0 +1,17 @@
+docker build -t image .
+
+docker run -d -v ftp:/home/vsftpd -p 20:20 -p 21:21 -p 47400-47470:47400-47470 -e FTP_USER_ADMIN=ahmed -e FTP_PASS_ADMIN=1234 -e FTP_USER_CLIENT1=sam -e FTP_PASS_CLIENT1=5678 -e FTP_USER_CLIENT2=joe -e FTP_PASS_CLIENT2=1010 -e PASV_ADDRESS=127.0.0.1 --name container --restart=always image
+
+alot of docker start, restart, and stop later...!
+
+
+./prometheus --config.file=prometheus.yml
+
+
+We are already runnning grafana on our system with default command
+
+
+sudo systemctl start grafana-server
+
+
+
